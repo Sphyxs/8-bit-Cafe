@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>8-Bit Café — Orders</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">8-Bit CaFé</div>
+
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a class="nav-btn" href="about.html">ABOUT</a>
+      <a class="nav-btn" href="menu-coffee.html">MENU</a>
+      <a class="nav-btn" href="index.html">HOME</a>
+      <a class="nav-btn" href="orders.html">ORDERS</a>
+    </nav>
+  </header>
+
+  <main class="content-container">
+    <section class="page coffee-bean-bg">
+      <div class="menu-bar pixel-bar">ORDERS</div>
+
+      <div class="orders-grid">
+        <div class="card orders-summary">
+          <h3 class="card-title">SUMMARY</h3>
+          <div id="order-items-list">
+            <p class="empty-cart">Your cart is empty. Add items from the menu!</p>
+          </div>
+        </div>
+
+        <div class="card orders-total">
+          <h3 class="card-title">TOTAL</h3>
+          <div id="total-items-list">
+            <p class="empty-total">No items yet</p>
+          </div>
+
+          <hr class="pixel-hr">
+          <div class="total-line grand-total" id="grand-total">= 0.00 $</div>
+          <button class="place-order-btn" id="placeOrderBtn">PLACE ORDER</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2025 8-Bit CaFé</div>
+      <div class="socials">📍 • ☕ • 🎮</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>8-Bit Café — Home</title>
+
+  <!-- Pixel headings (Press Start 2P as pixel substitute) & readable body -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">8-Bit CaFé</div>
+
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a class="nav-btn" href="about.html">ABOUT</a>
+      <a class="nav-btn" href="menu-coffee.html">MENU</a>
+      <a class="nav-btn" href="index.html">HOME</a>
+      <a class="nav-btn" href="orders.html">ORDERS</a>
+    </nav>
+  </header>
+
+  <main class="content-container">
+    <section class="page home-bg-image">
+      <div class="home-overlay"></div>
+      <div class="home-content">
+        <div class="pixel-logo">☕</div>
+        <h1 class="pixel-text">8-BIT CAFÉ</h1>
+        <h2 class="pixel-text sub-title">"SIP THE BIT"</h2>
+
+        <div class="home-cta-row">
+          <a class="cta primary" href="menu-coffee.html">ORDER NOW</a>
+          <a class="cta secondary" href="about.html">LEARN MORE</a>
+        </div>
+
+        <div style="margin-top:18px;">
+          <button class="view-order-btn" onclick="location.href='orders.html'">
+            <span class="icon">📄</span>
+            <span id="home-cart-count">= 0 items</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" style="padding-top:28px;">
+      <div class="card">
+        <h3 class="card-title">WELCOME</h3>
+        <p>Welcome to 8-Bit CaFé — where retro pixels meet cozy coffee. Explore our pixel-themed menu, collect a few memories, and place an order across pages with a persistent cart.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2025 8-Bit CaFé</div>
+      <div class="socials">📍 • ☕ • 🎮</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
