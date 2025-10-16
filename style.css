@@ -40,7 +40,7 @@ body{
 body::before{
     content:"";
     position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='80' height='80' fill='%23381A0C'/><rect x='10' y='10' width='6' height='6' fill='%237A5B44'/><rect x='28' y='10' width='6' height='6' fill='%237A5B44'/><rect x='10' y='28' width='6' height='6' fill='%237A5B44'/></svg>");
+    background-image: url("https://cdn.wallpapersafari.com/7/32/ZvhbSK.gif");
     opacity:0.06; mix-blend-mode:overlay;
 }
 
@@ -417,6 +417,7 @@ footer {
     margin: auto;
     line-height: 1.6;
 }
+
 
 
 
