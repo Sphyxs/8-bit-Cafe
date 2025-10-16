@@ -1,55 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Non-Coffee Menu | 8-Bit Cafe</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>8-Bit Café – Non-Coffee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="8-Bit Cafe Logo" class="logo">
-            <h1 class="shop-name">8-Bit Cafe</h1>
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="menu-coffee.html">Coffee</a>
-            <a href="menu-non-coffee.html" class="active">Non-Coffee</a>
-            <a href="menu-pastries.html">Pastries</a>
-            <a href="orders.html">Orders</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
 
-    <section class="menu">
-        <h2>Non-Coffee Menu</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="" alt="Matcha Latte" class="menu-image">
-                <h3>Matcha Latte</h3>
-                <p>₱150</p>
-            </div>
-            <div class="menu-item">
-                <img src="" alt="Chocolate Milk" class="menu-image">
-                <h3>Chocolate Milk</h3>
-                <p>₱120</p>
-            </div>
-            <div class="menu-item">
-                <img src="" alt="Strawberry Smoothie" class="menu-image">
-                <h3>Strawberry Smoothie</h3>
-                <p>₱140</p>
-            </div>
-            <div class="menu-item">
-                <img src="" alt="Caramel Frappe" class="menu-image">
-                <h3>Caramel Frappe</h3>
-                <p>₱160</p>
-            </div>
+  <header class="navbar">
+    <div class="logo">8-Bit Café</div>
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a class="nav-btn" href="about.html">ABOUT</a>
+      <a class="nav-btn" href="menu-coffee.html">MENU</a>
+      <a class="nav-btn" href="index.html">HOME</a>
+      <a class="nav-btn" href="orders.html">ORDERS</a>
+    </nav>
+  </header>
+
+  <main class="content-container">
+    <section class="page menu-page coffee-bean-bg">
+      <div class="menu-bar pixel-bar">NON-COFFEE</div>
+
+      <div class="menu-grid">
+        <div class="card menu-item" onclick="addItemToCart('Emerald Byte', 6.00)">
+          <h3 class="item-name">Emerald Byte</h3>
+          <div class="item-image-box">🍵</div>
+          <div class="price-bar">= 6.00$</div>
         </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Potion of Health', 4.00)">
+          <h3 class="item-name">Potion of Health</h3>
+          <div class="item-image-box">🧃</div>
+          <div class="price-bar">= 4.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Sugar Rush', 7.80)">
+          <h3 class="item-name">Sugar Rush</h3>
+          <div class="item-image-box">🥤</div>
+          <div class="price-bar">= 7.80$</div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:12px;margin-top:18px;">
+        <button class="menu-nav-btn" onclick="location.href='menu-coffee.html'">« Previous</button>
+        <button class="view-order-btn" onclick="location.href='orders.html'">
+          <span class="icon">📄</span>
+          <span id="non-coffee-count">= 0 items</span>
+        </button>
+        <button class="menu-nav-btn" onclick="location.href='menu-pastries.html'">Next »</button>
+      </div>
+
     </section>
+  </main>
 
-    <footer>
-        <p>© 2025 8-Bit Cafe | Designed with ❤️ by your friendly baristas</p>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2025 8-Bit Café</div>
+      <div class="socials">🌐 • ☕ • 🎮</div>
+    </div>
+  </footer>
+
+  <script>
+    function getCart() {
+      try {
+        const cart = localStorage.getItem('cafe_cart');
+        return cart ? JSON.parse(cart) : {};
+      } catch (e) {
+        console.error('Error loading cart:', e);
+        return {};
+      }
+    }
+
+    function saveCart(cart) {
+      try {
+        localStorage.setItem('cafe_cart', JSON.stringify(cart));
+        updateCartDisplay();
+      } catch (e) {
+        console.error('Error saving cart:', e);
+      }
+    }
+
+    function addItemToCart(itemName, price) {
+      console.log('Adding item:', itemName, price);
+      const cart = getCart();
+      
+      if (cart[itemName]) {
+        cart[itemName].quantity += 1;
+      } else {
+        cart[itemName] = { price: price, quantity: 1 };
+      }
+      
+      saveCart(cart);
+      showNotification(`Added ${itemName}! 🎮`);
+    }
+
+    function updateCartDisplay() {
+      const cart = getCart();
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      
+      const counter = document.getElementById('non-coffee-count');
+      if (counter) {
+        counter.textContent = `= ${totalItems} items`;
+        counter.style.animation = 'pulse 0.3s ease';
+      }
+    }
+
+    function showNotification(message) {
+      const existing = document.querySelector('.notification');
+      if (existing) existing.remove();
+
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      document.body.appendChild(notification);
+
+      setTimeout(() => notification.classList.add('show'), 10);
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, 2000);
+    }
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+      hamburger.onclick = () => {
+        const isOpen = navLinks.classList.contains('open');
+        navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', !isOpen);
+      };
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartDisplay();
+    });
+  </script>
 </body>
 </html>
