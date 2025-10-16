@@ -7,6 +7,133 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .menu-intro {
+      background: rgba(139, 90, 43, 0.3);
+      border: 3px solid #8B5A2B;
+      padding: 20px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .menu-intro h2 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      color: #D4AF37;
+      margin-bottom: 12px;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+    }
+    
+    .menu-intro p {
+      color: #f5deb3;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    
+    .item-description {
+      color: #DEB887;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 10px 0;
+      padding: 0 8px;
+      min-height: 60px;
+    }
+    
+    .item-stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 12px 0;
+      padding: 8px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+      font-size: 11px;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-label {
+      color: #D4AF37;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      margin-bottom: 4px;
+    }
+    
+    .stat-value {
+      color: #f5deb3;
+    }
+    
+    .stat-bar {
+      display: flex;
+      gap: 2px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    
+    .stat-pip {
+      width: 8px;
+      height: 8px;
+      background: #8B5A2B;
+      border: 1px solid #D4AF37;
+    }
+    
+    .stat-pip.filled {
+      background: #D4AF37;
+      box-shadow: 0 0 4px #D4AF37;
+    }
+    
+    .menu-item {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
+    }
+    
+    .menu-item:active {
+      transform: translateY(-2px);
+    }
+    
+    .item-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #D4AF37;
+      color: #3E2723;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .item-badge.rainbow {
+      background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #45B7D1);
+      color: white;
+    }
+
+    .item-badge.golden {
+      background: #FFD700;
+      color: #3E2723;
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0%, 100% { box-shadow: 0 0 5px #FFD700; }
+      50% { box-shadow: 0 0 15px #FFD700; }
+    }
+
+    .item-badge.chef {
+      background: #FF5722;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
@@ -29,24 +156,108 @@
 
   <main class="content-container">
     <section class="page menu-page coffee-bean-bg">
-      <div class="menu-bar pixel-bar">PASTRIES</div>
+      <div class="menu-bar pixel-bar">LEGENDARY LOOT</div>
+
+      <div class="menu-intro">
+        <h2>🍪 COLLECT RARE DROPS! 🍪</h2>
+        <p>Every great adventurer needs sustenance! Our bakery crafts pixel-perfect pastries that are both delicious and Instagram-worthy. Each item is baked fresh daily using secret recipes passed down through generations of pixel chefs. Pair them with your favorite drink for combo bonuses!</p>
+        <p style="font-size: 12px; color: #D4AF37; margin-top: 8px;">💡 Limited stock available - collect them all!</p>
+      </div>
 
       <div class="menu-grid">
         <div class="card menu-item" onclick="addToCart('Mana Macaroons', 2.00)">
+          <div class="item-badge rainbow">RARE</div>
           <h3 class="item-name">Mana Macaroons</h3>
           <div class="item-image-box">🍪</div>
+          <p class="item-description">
+            Delicate almond cookies that melt in your mouth! Each macaroon is carefully crafted with vibrant colors and filled with buttercream that restores +5 mana per bite. Available in multiple magical flavors. Warning: Highly addictive and may cause joy!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SWEET</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">FANCY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
           <div class="price-bar">= 2.00$ / 4pcs</div>
         </div>
 
         <div class="card menu-item" onclick="addToCart('8-Bit Cookies', 4.00)">
+          <div class="item-badge chef">HOMEMADE</div>
           <h3 class="item-name">8-Bit Cookies</h3>
           <div class="item-image-box">🍪</div>
+          <p class="item-description">
+            Classic chocolate chip cookies with a retro twist! Baked to golden-brown perfection with chunks of premium chocolate. Crispy on the outside, chewy on the inside - just like grandma used to make (if grandma was a pixel artist). Perfect for dunking or solo snacking!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SWEET</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">COMFORT</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
           <div class="price-bar">= 4.00$</div>
         </div>
 
         <div class="card menu-item" onclick="addToCart('Pixel Croissant', 7.80)">
+          <div class="item-badge golden">EPIC</div>
           <h3 class="item-name">Pixel Croissant</h3>
           <div class="item-image-box">🥐</div>
+          <p class="item-description">
+            An epic-tier pastry with 64 buttery layers! Flaky, golden, and absolutely legendary. This French masterpiece is baked fresh every morning and grants +20 sophistication. Pair it with coffee for the ultimate breakfast combo. Achievement unlocked: Fancy Breakfast!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">FLAKY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">FANCY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
           <div class="price-bar">= 7.80$</div>
         </div>
       </div>
