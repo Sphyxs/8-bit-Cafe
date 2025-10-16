@@ -1,75 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>8-Bit Café — Non-Coffee</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Coffee Menu | 8-Bit Cafe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="navbar">
-    <div class="logo">8-Bit CaFé</div>
-
-    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-
-    <nav class="nav-links" role="navigation" aria-label="Main navigation">
-      <a class="nav-btn" href="about.html">ABOUT</a>
-      <a class="nav-btn" href="menu-coffee.html">MENU</a>
-      <a class="nav-btn" href="index.html">HOME</a>
-      <a class="nav-btn" href="orders.html">ORDERS</a>
-    </nav>
-  </header>
-
-  <main class="content-container">
-    <section class="page menu-page coffee-bean-bg">
-      <div class="menu-bar pixel-bar">NON-COFFEE</div>
-
-      <div class="menu-grid">
-        <div class="card menu-item" data-item="Emerald Byte" data-price="6.00">
-          <h3 class="item-name">Emerald Byte</h3>
-          <div class="item-image-box">🍵</div>
-          <div class="price-bar">= 6.00$</div>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="8-Bit Cafe Logo" class="logo">
+            <h1 class="shop-name">8-Bit Cafe</h1>
         </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu-coffee.html">Coffee</a>
+            <a href="menu-non-coffee.html" class="active">Non-Coffee</a>
+            <a href="menu-pastries.html">Pastries</a>
+            <a href="orders.html">Orders</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
 
-        <div class="card menu-item" data-item="Potion of Health" data-price="4.00">
-          <h3 class="item-name">Potion of Health</h3>
-          <div class="item-image-box">🧃</div>
-          <div class="price-bar">= 4.00$</div>
+    <section class="menu">
+        <h2>Non-Coffee Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="" alt="Matcha Latte" class="menu-image">
+                <h3>Matcha Latte</h3>
+                <p>₱150</p>
+            </div>
+            <div class="menu-item">
+                <img src="" alt="Chocolate Milk" class="menu-image">
+                <h3>Chocolate Milk</h3>
+                <p>₱120</p>
+            </div>
+            <div class="menu-item">
+                <img src="" alt="Strawberry Smoothie" class="menu-image">
+                <h3>Strawberry Smoothie</h3>
+                <p>₱140</p>
+            </div>
+            <div class="menu-item">
+                <img src="" alt="Caramel Frappe" class="menu-image">
+                <h3>Caramel Frappe</h3>
+                <p>₱160</p>
+            </div>
         </div>
-
-        <div class="card menu-item" data-item="Sugar Rush" data-price="7.80">
-          <h3 class="item-name">Sugar Rush</h3>
-          <div class="item-image-box">🥤</div>
-          <div class="price-bar">= 7.80$</div>
-        </div>
-      </div>
-
-      <div style="display:flex;justify-content:center;gap:12px;margin-top:18px;">
-        <button class="menu-nav-btn" id="prevMenuBtn">« Previous</button>
-        <button class="view-order-btn" onclick="location.href='orders.html'">
-          <span class="icon">📄</span>
-          <span id="non-coffee-count">= 0 items</span>
-        </button>
-        <button class="menu-nav-btn" id="nextMenuBtn">Next »</button>
-      </div>
-
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>© 2025 8-Bit CaFé</div>
-      <div class="socials">📍 • ☕ • 🎮</div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <footer>
+        <p>© 2025 8-Bit Cafe | Designed with ❤️ by your friendly baristas</p>
+    </footer>
 </body>
 </html>
