@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>8-Bit Café — Home</title>
+  <title>8-Bit Café – Home</title>
 
   <!-- Pixel headings (Press Start 2P as pixel substitute) & readable body -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
 
   <header class="navbar">
-    <div class="logo">8-Bit CaFé</div>
+    <div class="logo">8-Bit Café</div>
 
     <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
       <span class="hamburger-line"></span>
@@ -53,19 +53,74 @@
     <section class="page" style="padding-top:28px;">
       <div class="card">
         <h3 class="card-title">WELCOME</h3>
-        <p>Welcome to 8-Bit CaFé — where retro pixels meet cozy coffee. Explore our pixel-themed menu, collect a few memories, and place an order across pages with a persistent cart.</p>
+        <p>Welcome to 8-Bit Café – where retro pixels meet cozy coffee. Explore our pixel-themed menu, collect a few memories, and place an order across pages with a persistent cart.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div>© 2025 8-Bit CaFé</div>
-      <div class="socials">📍 • ☕ • 🎮</div>
+      <div>© 2025 8-Bit Café</div>
+      <div class="socials">🌐 • ☕ • 🎮</div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Cart functions
+    function getCart() {
+      try {
+        const cart = localStorage.getItem('cafe_cart');
+        return cart ? JSON.parse(cart) : {};
+      } catch (e) {
+        console.error('Error loading cart:', e);
+        return {};
+      }
+    }
+
+    function updateCartDisplay() {
+      const cart = getCart();
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      
+      const counter = document.getElementById('home-cart-count');
+      if (counter) {
+        counter.textContent = `= ${totalItems} items`;
+        if (totalItems > 0) {
+          counter.style.animation = 'pulse 0.3s ease';
+        }
+      }
+      
+      console.log('Home page - Total items:', totalItems);
+    }
+
+    // Mobile nav
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+      hamburger.onclick = () => {
+        const isOpen = navLinks.classList.contains('open');
+        navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', !isOpen);
+      };
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartDisplay();
+      console.log('Home page loaded, cart:', getCart());
+    });
+
+    // Update cart count when page becomes visible (user returns to tab)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        updateCartDisplay();
+      }
+    });
+
+    // Update cart count when user focuses on page
+    window.addEventListener('focus', () => {
+      updateCartDisplay();
+    });
+  </script>
 </body>
 </html>
-
