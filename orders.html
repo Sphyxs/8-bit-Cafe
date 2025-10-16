@@ -3,22 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>8-Bit Café — Orders</title>
-
+  <title>8-Bit Café – Orders</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="navbar">
-    <div class="logo">8-Bit CaFé</div>
-
+    <div class="logo">8-Bit Café</div>
     <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
-
     <nav class="nav-links" role="navigation" aria-label="Main navigation">
       <a class="nav-btn" href="about.html">ABOUT</a>
       <a class="nav-btn" href="menu-coffee.html">MENU</a>
@@ -55,11 +52,145 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div>© 2025 8-Bit CaFé</div>
-      <div class="socials">📍 • ☕ • 🎮</div>
+      <div>© 2025 8-Bit Café</div>
+      <div class="socials">🌐 • ☕ • 🎮</div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Cart functions
+    function getCart() {
+      try {
+        const cart = localStorage.getItem('cafe_cart');
+        return cart ? JSON.parse(cart) : {};
+      } catch (e) {
+        console.error('Error loading cart:', e);
+        return {};
+      }
+    }
+
+    function saveCart(cart) {
+      try {
+        localStorage.setItem('cafe_cart', JSON.stringify(cart));
+        renderOrders();
+      } catch (e) {
+        console.error('Error saving cart:', e);
+      }
+    }
+
+    function updateQuantity(itemName, delta) {
+      const cart = getCart();
+      if (cart[itemName]) {
+        cart[itemName].quantity += delta;
+        if (cart[itemName].quantity <= 0) {
+          delete cart[itemName];
+          showNotification(`Removed ${itemName}`);
+        } else {
+          showNotification(`Updated ${itemName}`);
+        }
+        saveCart(cart);
+      }
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cafe_cart');
+      renderOrders();
+      showNotification('Cart cleared! 🗑️');
+    }
+
+    function renderOrders() {
+      const cart = getCart();
+      const items = Object.entries(cart);
+      
+      const orderItemsList = document.getElementById('order-items-list');
+      const totalItemsList = document.getElementById('total-items-list');
+      const grandTotalEl = document.getElementById('grand-total');
+
+      if (items.length === 0) {
+        orderItemsList.innerHTML = '<p class="empty-cart">Your cart is empty. Add items from the menu!</p>';
+        totalItemsList.innerHTML = '<p class="empty-total">No items yet</p>';
+        grandTotalEl.textContent = '= 0.00 $';
+        return;
+      }
+
+      // Render order items
+      orderItemsList.innerHTML = items.map(([name, data]) => `
+        <div class="order-item">
+          <span class="item-text">${name}</span>
+          <div class="quantity-controls">
+            <button class="control-btn" onclick="updateQuantity('${name.replace(/'/g, "\\'")}', -1)">−</button>
+            <span class="item-quantity">${data.quantity}</span>
+            <button class="control-btn" onclick="updateQuantity('${name.replace(/'/g, "\\'")}', 1)">+</button>
+          </div>
+          <span class="item-price">${(data.price * data.quantity).toFixed(2)}$</span>
+        </div>
+      `).join('');
+
+      // Render totals
+      totalItemsList.innerHTML = items.map(([name, data]) => `
+        <div class="total-line">
+          <span>${name} x${data.quantity}</span>
+          <span>${(data.price * data.quantity).toFixed(2)}$</span>
+        </div>
+      `).join('');
+
+      // Grand total
+      const grandTotal = items.reduce((sum, [_, data]) => sum + (data.price * data.quantity), 0);
+      grandTotalEl.textContent = `= ${grandTotal.toFixed(2)} $`;
+    }
+
+    function showNotification(message) {
+      const existing = document.querySelector('.notification');
+      if (existing) existing.remove();
+
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      document.body.appendChild(notification);
+
+      setTimeout(() => notification.classList.add('show'), 10);
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, 2000);
+    }
+
+    // Place order
+    document.getElementById('placeOrderBtn').onclick = () => {
+      const cart = getCart();
+      const items = Object.entries(cart);
+      
+      if (items.length === 0) {
+        showNotification('Cart is empty! 🛒');
+        return;
+      }
+
+      const total = items.reduce((sum, [_, data]) => sum + (data.price * data.quantity), 0);
+      showNotification(`Order placed! Total: $${total.toFixed(2)} 🎉`);
+      
+      setTimeout(() => {
+        clearCart();
+        showNotification('Thank you! ☕');
+      }, 1500);
+    };
+
+    // Mobile nav
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+      hamburger.onclick = () => {
+        const isOpen = navLinks.classList.contains('open');
+        navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', !isOpen);
+      };
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderOrders();
+      console.log('Orders page loaded, cart:', getCart());
+    });
+  </script>
 </body>
 </html>
