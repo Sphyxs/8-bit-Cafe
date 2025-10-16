@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>8-Bit Café — About</title>
+  <title>8-Bit Café – Pastries</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,7 +11,7 @@
 <body>
 
   <header class="navbar">
-    <div class="logo">8-Bit CaFé</div>
+    <div class="logo">8-Bit Café</div>
 
     <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
       <span class="hamburger-line"></span>
@@ -28,92 +28,130 @@
   </header>
 
   <main class="content-container">
-    <section class="page about-page">
-      <div class="about-content">
-        <div class="about-top-section">
-          <div class="card about-card welcome-card">
-            <h3 class="card-title">WELCOME</h3>
-            <p>Welcome to 8-Bit CaFé, a pixel-themed spot celebrating game nostalgia and delicious brews. We combine cozy vibes, pixel motifs, and handcrafted drinks.</p>
-          </div>
+    <section class="page menu-page coffee-bean-bg">
+      <div class="menu-bar pixel-bar">PASTRIES</div>
 
-          <div class="card about-card inspiration-card">
-            <h3 class="card-title">INSPIRATION</h3>
-            <p>Inspired by retro arcades and community hangouts, we aim to be a place where gamers, creators, and coffee lovers connect.</p>
-          </div>
-
-          <div class="card about-card purpose-card">
-            <h3 class="card-title">PURPOSE</h3>
-            <p>To provide a fun, welcoming space that blends creative playfulness with quality coffee.</p>
-          </div>
+      <div class="menu-grid">
+        <div class="card menu-item" onclick="addToCart('Mana Macaroons', 2.00)">
+          <h3 class="item-name">Mana Macaroons</h3>
+          <div class="item-image-box">🍪</div>
+          <div class="price-bar">= 2.00$ / 4pcs</div>
         </div>
 
-        <div class="history-owners-section">
-          <div class="card history-card">
-            <h3 class="card-title">HISTORY</h3>
-            <p>From a small pop-up to a local favorite, 8-Bit CaFé grew through community and passion for pixels & coffee.</p>
-          </div>
-
-          <div class="card owners-card">
-            <h3 class="card-title">OWNERS</h3>
-            <div class="owners-images">
-              <div class="owner-image-container">
-                <div class="owner-pixel">👨</div>
-              </div>
-              <div class="owner-image-container">
-                <div class="owner-pixel">👩</div>
-              </div>
-            </div>
-          </div>
+        <div class="card menu-item" onclick="addToCart('8-Bit Cookies', 4.00)">
+          <h3 class="item-name">8-Bit Cookies</h3>
+          <div class="item-image-box">🍪</div>
+          <div class="price-bar">= 4.00$</div>
         </div>
 
-        <div class="reviews-section">
-          <div class="reviews-header pixel-bar">REVIEWS</div>
-          <div class="reviews-list">
-  <div class="card review-card">
-    <p class="review-text">★★★★★ - "Feels like I'm sipping coffee inside my favorite retro game."</p>
-    <span class="reviewer">- @GameLover98</span>
-  </div>
-  <div class="card review-card">
-    <p class="review-text">★★★★★ - "The pixel-themed drinks are a work of art. Highly recommend!"</p>
-    <span class="reviewer">- @CoffeeQuest</span>
-  </div>
-  <div class="card review-card">
-    <p class="review-text">★★★★☆ - "Loved the vibe and the retro music! The cookies are 10/10."</p>
-    <span class="reviewer">- @RetroFanGirl</span>
-  </div>
-  <div class="card review-card">
-    <p class="review-text">★★★★★ - "Best latte art I've ever seen, and it’s 8-bit style! Genius."</p>
-    <span class="reviewer">- @CaffeineAddict</span>
-  </div>
-  <div class="card review-card">
-    <p class="review-text">★★★★★ - "Friendly staff and nostalgic interior — feels like the 90s arcade days."</p>
-    <span class="reviewer">- @ArcadeHeart</span>
-  </div>
-  <div class="card review-card">
-    <p class="review-text">★★★★☆ - "A bit crowded on weekends, but worth it for the vibe!"</p>
-    <span class="reviewer">- @LateNightDev</span>
-  </div>
-</div>
-          <hr class="pixel-hr">
-          <div class="review-instruction">Have feedback? Share your review!</div>
-
-          <div class="review-input-container">
-            <input type="text" id="reviewInput" placeholder="Write your review here.">
-            <button class="send-btn" id="sendReview">▶</button>
-          </div>
+        <div class="card menu-item" onclick="addToCart('Pixel Croissant', 7.80)">
+          <h3 class="item-name">Pixel Croissant</h3>
+          <div class="item-image-box">🥐</div>
+          <div class="price-bar">= 7.80$</div>
         </div>
-
       </div>
+
+      <div style="display:flex;justify-content:center;gap:12px;margin-top:18px;flex-wrap:wrap">
+        <button class="menu-nav-btn" onclick="location.href='menu-non-coffee.html'">« Previous</button>
+        <button class="view-order-btn" onclick="location.href='orders.html'">
+          <span class="icon">📋</span>
+          <span id="pastries-count">= 0 items</span>
+        </button>
+        <button class="menu-nav-btn" onclick="location.href='menu-coffee.html'">Next »</button>
+      </div>
+
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div>© 2025 8-Bit CaFé</div>
-      <div class="socials">📍 • ☕ • 🎮</div>
+      <div>© 2025 8-Bit Café</div>
+      <div class="socials">🍪 • ☕ • 🎮</div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Cart functions - using localStorage like the other pages
+    function getCart() {
+      try {
+        const cart = localStorage.getItem('cafe_cart');
+        return cart ? JSON.parse(cart) : {};
+      } catch (e) {
+        console.error('Error loading cart:', e);
+        return {};
+      }
+    }
+
+    function saveCart(cart) {
+      try {
+        localStorage.setItem('cafe_cart', JSON.stringify(cart));
+        updateCartDisplay();
+      } catch (e) {
+        console.error('Error saving cart:', e);
+      }
+    }
+
+    function addToCart(itemName, price) {
+      console.log('Adding item:', itemName, price);
+      const cart = getCart();
+      
+      if (cart[itemName]) {
+        cart[itemName].quantity += 1;
+      } else {
+        cart[itemName] = { price: price, quantity: 1 };
+      }
+      
+      saveCart(cart);
+      showNotification(`Added ${itemName}! 🎮`);
+      console.log('Cart after adding:', cart);
+    }
+
+    function updateCartDisplay() {
+      const cart = getCart();
+      const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+      
+      const counter = document.getElementById('pastries-count');
+      if (counter) {
+        counter.textContent = `= ${totalItems} items`;
+        counter.style.animation = 'pulse 0.3s ease';
+      }
+      
+      console.log('Total items:', totalItems);
+    }
+
+    function showNotification(message) {
+      const existing = document.querySelector('.notification');
+      if (existing) existing.remove();
+
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      document.body.appendChild(notification);
+
+      setTimeout(() => notification.classList.add('show'), 10);
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, 2000);
+    }
+
+    // Mobile nav
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+      hamburger.onclick = () => {
+        const isOpen = navLinks.classList.contains('open');
+        navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', !isOpen);
+      };
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartDisplay();
+      console.log('Pastries page loaded, cart:', getCart());
+    });
+  </script>
 </body>
 </html>
