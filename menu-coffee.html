@@ -6,6 +6,115 @@
   <title>8-Bit Café – Coffee</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .menu-intro {
+      background: rgba(139, 90, 43, 0.3);
+      border: 3px solid #8B5A2B;
+      padding: 20px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .menu-intro h2 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      color: #D4AF37;
+      margin-bottom: 12px;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+    }
+    
+    .menu-intro p {
+      color: #f5deb3;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    
+    .item-description {
+      color: #DEB887;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 10px 0;
+      padding: 0 8px;
+      min-height: 60px;
+    }
+    
+    .item-stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 12px 0;
+      padding: 8px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+      font-size: 11px;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-label {
+      color: #D4AF37;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      margin-bottom: 4px;
+    }
+    
+    .stat-value {
+      color: #f5deb3;
+    }
+    
+    .stat-bar {
+      display: flex;
+      gap: 2px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    
+    .stat-pip {
+      width: 8px;
+      height: 8px;
+      background: #8B5A2B;
+      border: 1px solid #D4AF37;
+    }
+    
+    .stat-pip.filled {
+      background: #D4AF37;
+      box-shadow: 0 0 4px #D4AF37;
+    }
+    
+    .menu-item {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
+    }
+    
+    .menu-item:active {
+      transform: translateY(-2px);
+    }
+    
+    .item-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #D4AF37;
+      color: #3E2723;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    
+    .menu-item {
+      position: relative;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -25,28 +134,116 @@
 
   <main class="content-container">
     <section class="page menu-page coffee-bean-bg">
-      <div class="menu-bar">COFFEE</div>
+      <div class="menu-bar">COFFEE QUEST</div>
+      
+      <div class="menu-intro">
+        <h2>⚡ POWER UP YOUR DAY ⚡</h2>
+        <p>Welcome to the Coffee Zone! Each brew is carefully crafted to boost your stats and keep you energized for the next level. Choose your player and start your caffeine quest!</p>
+        <p style="font-size: 12px; color: #D4AF37; margin-top: 8px;">💡 Tap any item to add it to your cart!</p>
+      </div>
+
       <div class="menu-grid">
         <div class="card menu-item" onclick="addItemToCart('Pixel Espresso', 5.00)">
+          <div class="item-badge">CLASSIC</div>
           <h3 class="item-name">Pixel Espresso</h3>
           <div class="item-image-box">☕</div>
+          <p class="item-description">
+            The original 8-bit brew! A concentrated shot of pure energy that packs a punch. Small but mighty, this espresso delivers maximum flavor in minimum pixels. Perfect for speedrunners who need instant power-ups.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">ENERGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SMOOTH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
           <div class="price-bar">= 5.00$</div>
         </div>
+
         <div class="card menu-item" onclick="addItemToCart('Level-Up Latte', 6.50)">
+          <div class="item-badge">POPULAR</div>
           <h3 class="item-name">Level-Up Latte</h3>
           <div class="item-image-box">☕</div>
+          <p class="item-description">
+            Ascend to new heights with this creamy masterpiece! Rich espresso meets velvety steamed milk in perfect harmony. Each sip grants +10 focus and +5 happiness. Warning: May cause productivity achievements.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">ENERGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SMOOTH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
           <div class="price-bar">= 6.50$</div>
         </div>
+
         <div class="card menu-item" onclick="addItemToCart('Power-Up Cappuccino', 6.00)">
+          <div class="item-badge">NEW!</div>
           <h3 class="item-name">Power-Up Cappuccino</h3>
           <div class="item-image-box">☕</div>
+          <p class="item-description">
+            Unlock the ultimate power-up! This frothy favorite combines bold espresso with clouds of microfoam. The perfect balance of strength and smoothness. Bonus: Comes with latte art that'll make your Instagram go legendary.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">ENERGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SMOOTH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div>
+                <div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
           <div class="price-bar">= 6.00$</div>
         </div>
       </div>
+
       <div style="display:flex;justify-content:center;gap:12px;margin-top:18px;flex-wrap:wrap">
         <button class="menu-nav-btn" onclick="location.href='menu-pastries.html'">« Previous</button>
         <button class="view-order-btn" onclick="location.href='orders.html'">
-          <span class="icon">📄</span>
+          <span class="icon">🔄</span>
           <span id="coffee-count">= 0 items</span>
         </button>
         <button class="menu-nav-btn" onclick="location.href='menu-non-coffee.html'">Next »</button>
