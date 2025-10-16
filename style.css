@@ -25,7 +25,6 @@
    1. Reset & base
    ------------------------- */
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
 body{
     font-family: var(--font-body);
     background: linear-gradient(180deg, var(--dark-roast) 0%, #2F1B13 100%);
@@ -34,6 +33,7 @@ body{
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     overflow-x:hidden;
+    height:100%
 }
 
 /* pixel tiled background for arcade vibe (subtle) */
@@ -285,4 +285,5 @@ h1, h2, h3, .pixel-bar, .cta, .nav-btn,
 .nav-btn, .cta, .menu-nav-btn, .view-order-btn, .price-bar {
   letter-spacing: 1px;
 }
+
 
