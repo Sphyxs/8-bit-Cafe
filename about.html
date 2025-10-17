@@ -130,8 +130,29 @@
     .about-top-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px; }
     .history-owners-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px; }
     
-    .owners-images { display: flex; gap: 20px; justify-content: center; margin-top: 10px; }
-    .owner-image-container { width: 80px; height: 80px; background: var(--warm-mocha); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 4px solid var(--deep-cocoa); }
+    .owners-images { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 12px; 
+      margin-top: 10px; 
+    }
+    
+    .owner-image-container { 
+      width: 100%; 
+      aspect-ratio: 1;
+      background: var(--warm-mocha); 
+      border-radius: 8px; 
+      overflow: hidden;
+      border: 4px solid var(--deep-cocoa);
+      box-shadow: 4px 4px 0 0 var(--dark-roast);
+    }
+
+    .owner-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     .reviews-list{ max-height:420px; overflow:auto; padding-right:8px }
     .review-card{ background:transparent; border-radius:8px; margin-bottom:10px; padding:12px; border: 2px solid rgba(255,255,255,0.1); }
@@ -228,145 +249,4 @@
 
           <div class="card about-card inspiration-card">
             <h3 class="card-title">INSPIRATION</h3>
-            <p>Our concept was born from a deep appreciation for the retro arcade era and the sense of community those spaces fostered. We wanted to recreate that feeling of gathering with friends around a game, but with the added comfort of great coffee and conversation. The 8-bit aesthetic represents more than just nostalgia; it embodies simplicity, creativity, and the joy of shared experiences. Our goal is to provide a welcoming environment where gamers, artists, developers, and coffee enthusiasts can come together, exchange ideas, and feel at home.</p>
-          </div>
-
-          <div class="card about-card purpose-card">
-            <h3 class="card-title">PURPOSE</h3>
-            <p>At 8-Bit Café, our mission is to create more than just another coffee shop. We strive to build a community hub that celebrates creativity, nostalgia, and quality. Whether you are here to work on a project, meet friends, or simply enjoy a well-crafted beverage in a unique setting, we aim to provide an experience that is both memorable and meaningful. We believe that great coffee and great company go hand in hand, and we are committed to fostering a space where both can thrive.</p>
-          </div>
-        </div>
-
-        <div class="history-owners-section">
-          <div class="card history-card">
-            <h3 class="card-title">HISTORY</h3>
-            <p>8-Bit Café started as a modest pop-up concept at local gaming conventions and community events, where we served themed drinks and connected with fellow enthusiasts. The overwhelming positive response from the community inspired us to establish a permanent location. Through dedication, hard work, and the support of our loyal customers, we transformed from a temporary booth into a beloved local establishment. Our journey has been driven by a genuine passion for both specialty coffee and gaming culture, and we continue to grow alongside the vibrant community that has embraced us from the beginning.</p>
-          </div>
-
-          <div class="card owners-card">
-            <h3 class="card-title">OWNERS</h3>
-            <div class="owners-images">
-              <div class="owner-image-container">
-                <div class="owner-pixel">👨</div>
-              </div>
-              <div class="owner-image-container">
-                <div class="owner-pixel">👩</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reviews-section">
-          <div class="reviews-header pixel-bar">REVIEWS</div>
-          <div class="reviews-list">
-            <div class="card review-card">
-              <p class="review-text">★★★★★ - "Feels like I'm sipping coffee inside my favorite retro game."</p>
-              <span class="reviewer">- @GameLover98</span>
-            </div>
-            <div class="card review-card">
-              <p class="review-text">★★★★★ - "The pixel-themed drinks are a work of art. Highly recommend!"</p>
-              <span class="reviewer">- @CoffeeQuest</span>
-            </div>
-            <div class="card review-card">
-              <p class="review-text">★★★★☆ - "Loved the vibe and the retro music! The cookies are 10/10."</p>
-              <span class="reviewer">- @RetroFanGirl</span>
-            </div>
-            <div class="card review-card">
-              <p class="review-text">★★★★★ - "Best latte art I've ever seen, and it's 8-bit style! Genius."</p>
-              <span class="reviewer">- @CaffeineAddict</span>
-            </div>
-            <div class="card review-card">
-              <p class="review-text">★★★★★ - "Friendly staff and nostalgic interior — feels like the 90s arcade days."</p>
-              <span class="reviewer">- @ArcadeHeart</span>
-            </div>
-            <div class="card review-card">
-              <p class="review-text">★★★★☆ - "A bit crowded on weekends, but worth it for the vibe!"</p>
-              <span class="reviewer">- @LateNightDev</span>
-            </div>
-          </div>
-          <hr class="pixel-hr">
-          <div class="review-instruction">Have feedback? Share your review!</div>
-
-          <div class="review-input-container">
-            <input type="text" id="reviewInput" placeholder="Write your review here...">
-            <button class="send-btn" id="sendReview">▶</button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>© 2025 8-Bit Café</div>
-      <div class="socials">🍔 • ☕ • 🎮</div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile Navigation
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.onclick = () => {
-      const isOpen = navLinks.classList.contains('open');
-      if (isOpen) {
-        navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      } else {
-        navLinks.classList.add('open');
-        hamburger.setAttribute('aria-expanded', 'true');
-      }
-    };
-
-    // Notification System
-    function showNotification(message) {
-      const existing = document.querySelector('.notification');
-      if (existing) existing.remove();
-
-      const notification = document.createElement('div');
-      notification.className = 'notification';
-      notification.textContent = message;
-      document.body.appendChild(notification);
-
-      setTimeout(() => notification.classList.add('show'), 10);
-      setTimeout(() => {  
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 300);
-      }, 2000);
-    }
-
-    // Review Submission
-    const sendReviewBtn = document.getElementById('sendReview');
-    const reviewInput = document.getElementById('reviewInput');
-    
-    sendReviewBtn.onclick = () => {
-      const reviewText = reviewInput.value.trim();
-      
-      if (!reviewText) {
-        showNotification('Please write a review first! ✍️');
-        return;
-      }
-
-      const reviewsList = document.querySelector('.reviews-list');
-      const newReview = document.createElement('div');
-      newReview.className = 'card review-card';
-      newReview.style.animation = 'slideIn 0.5s ease';
-      newReview.innerHTML = `
-        <p class="review-text">★★★★★ - "${reviewText}"</p>
-        <span class="reviewer">- @You</span>
-      `;
-      
-      reviewsList.insertBefore(newReview, reviewsList.firstChild);
-      reviewInput.value = '';
-      
-      showNotification('Review submitted! Thanks! 🌟');
-    };
-
-    reviewInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') sendReviewBtn.click();
-    });
-  </script>
-</body>
-</html>
+            <p>Our concept was born from a deep appreciation for the retro arcade era
