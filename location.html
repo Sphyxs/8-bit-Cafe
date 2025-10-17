@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>8-Bit Café – Location & Info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-roast: #381A0C;
+      --warm-mocha: #7A5B44;
+      --latte-cream: #C89D7D;
+      --caramel-glow: #CE8C5C;
+      --deep-cocoa: #542B0C;
+      --rustic-amber: #A66331;
+      --pixel-orange: #CA7443;
+      --white: #FFFFFF;
+      --black: #000000;
+      --font-pixel: 'Press Start 2P', monospace;
+      --font-body: 'Barlow', sans-serif;
+      --header-height: 80px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, var(--dark-roast) 0%, #2F1B13 100%);
+      color: var(--latte-cream);
+      padding-top: var(--header-height);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='80' height='80' fill='%23381A0C'/><rect x='10' y='10' width='6' height='6' fill='%237A5B44'/></svg>");
+      opacity: 0.06;
+      mix-blend-mode: overlay;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      background: var(--dark-roast);
+      border-bottom: 6px solid var(--warm-mocha);
+      z-index: 1200;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo {
+      font-family: var(--font-pixel);
+      color: var(--latte-cream);
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 10px; }
+    .nav-links a { text-decoration: none; }
+
+    .nav-btn {
+      font-family: var(--font-pixel);
+      font-size: 0.95rem;
+      background: var(--latte-cream);
+      color: var(--dark-roast);
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: 3px solid var(--deep-cocoa);
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 0 var(--deep-cocoa);
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0 0 var(--deep-cocoa);
+    }
+
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hamburger-line {
+      width: 28px;
+      height: 4px;
+      background: var(--latte-cream);
+      display: block;
+      border-radius: 2px;
+    }
+
+    .content-container { position: relative; z-index: 1; }
+
+    .page {
+      padding: 30px 5vw;
+      min-height: calc(100vh - var(--header-height));
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .pixel-bar {
+      width: 100%;
+      max-width: 680px;
+      margin: 10px auto 26px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-family: var(--font-pixel);
+      text-align: center;
+      background: linear-gradient(90deg, var(--latte-cream), var(--caramel-glow));
+      color: var(--dark-roast);
+      box-shadow: 6px 6px 0 0 var(--deep-cocoa);
+      font-size: 1.5rem;
+      animation: slideInDown 0.6s ease-out;
+    }
+
+    .location-map-container {
+      max-width: 750px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .map-box {
+      background: var(--latte-cream);
+      border: 4px solid var(--deep-cocoa);
+      padding: 40px 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 6px 6px 0 var(--deep-cocoa);
+    }
+
+    .map-pin { font-size: 3rem; margin-bottom: 15px; }
+
+    .map-title {
+      font-family: var(--font-pixel);
+      font-size: 1.2rem;
+      color: var(--dark-roast);
+      margin-bottom: 10px;
+    }
+
+    .map-address {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--warm-mocha);
+      margin: 5px 0;
+    }
+
+    .info-row-box {
+      background: var(--latte-cream);
+      border: 3px solid var(--deep-cocoa);
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      box-shadow: 4px 4px 0 var(--deep-cocoa);
+      animation: slideInLeft 0.6s ease-out backwards;
+    }
+
+    .info-row-box:nth-child(2) { animation-delay: 0.1s; }
+    .info-row-box:nth-child(3) { animation-delay: 0.2s; }
+    .info-row-box:nth-child(4) { animation-delay: 0.3s; }
+
+    .info-icon { font-size: 2rem; flex-shrink: 0; }
+    .info-content { flex: 1; }
+
+    .info-title {
+      font-family: var(--font-pixel);
+      font-size: 0.75rem;
+      color: var(--dark-roast);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .info-detail {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--warm-mocha);
+      margin: 3px 0;
+    }
+
+    .payment-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: var(--latte-cream);
+      font-size: 0.95rem;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 30px;
+    }
+
+    .payment-card {
+      background: var(--latte-cream);
+      border: 4px solid var(--deep-cocoa);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 6px 6px 0 var(--deep-cocoa);
+      transition: transform 0.2s ease;
+      animation: slideInUp 0.6s ease-out backwards;
+    }
+
+    .payment-card:nth-child(1) { animation-delay: 0.1s; }
+    .payment-card:nth-child(2) { animation-delay: 0.2s; }
+    .payment-card:nth-child(3) { animation-delay: 0.3s; }
+    .payment-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .payment-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 var(--deep-cocoa);
+    }
+
+    .payment-icon { font-size: 3rem; margin-bottom: 12px; }
+
+    .payment-title {
+      font-family: var(--font-pixel);
+      font-size: 0.85rem;
+      color: var(--dark-roast);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .payment-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--warm-mocha);
+      line-height: 1.5;
+      margin-bottom: 15px;
+      min-height: 80px;
+    }
+
+    .payment-btn {
+      font-family: var(--font-pixel);
+      font-size: 0.7rem;
+      background: var(--warm-mocha);
+      color: var(--latte-cream);
+      border: 2px solid var(--deep-cocoa);
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: default;
+    }
+
+    .payment-notes {
+      max-width: 750px;
+      margin: 0 auto;
+      background: rgba(122, 91, 68, 0.3);
+      border: 3px solid var(--warm-mocha);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .note-title {
+      font-family: var(--font-pixel);
+      font-size: 0.8rem;
+      color: var(--latte-cream);
+      margin-bottom: 12px;
+    }
+
+    .note-list {
+      list-style: none;
+      padding: 0;
+      color: var(--latte-cream);
+    }
+
+    .note-list li {
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.9rem;
+    }
+
+    .note-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--caramel-glow);
+    }
+
+    .delivery-options {
+      max-width: 750px;
+      margin: 20px auto;
+    }
+
+    .delivery-card {
+      background: var(--latte-cream);
+      border: 3px solid var(--deep-cocoa);
+      padding: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      box-shadow: 4px 4px 0 var(--deep-cocoa);
+      animation: slideInRight 0.6s ease-out backwards;
+    }
+
+    .delivery-card:nth-child(1) { animation-delay: 0.1s; }
+    .delivery-card:nth-child(2) { animation-delay: 0.2s; }
+    .delivery-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .delivery-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .delivery-content { flex: 1; }
+
+    .delivery-title {
+      font-family: var(--font-pixel);
+      font-size: 0.85rem;
+      color: var(--dark-roast);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .delivery-text {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--warm-mocha);
+      line-height: 1.6;
+    }
+
+    .delivery-coverage {
+      max-width: 750px;
+      margin: 30px auto;
+      background: rgba(122, 91, 68, 0.3);
+      border: 3px solid var(--warm-mocha);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .coverage-title {
+      font-family: var(--font-pixel);
+      font-size: 0.8rem;
+      color: var(--latte-cream);
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .coverage-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .coverage-tag {
+      font-family: var(--font-pixel);
+      font-size: 0.65rem;
+      background: var(--warm-mocha);
+      color: var(--latte-cream);
+      padding: 6px 12px;
+      border: 2px solid var(--deep-cocoa);
+      border-radius: 4px;
+      animation: fadeIn 1s ease-out backwards;
+    }
+
+    .coverage-tag:nth-child(1) { animation-delay: 0.1s; }
+    .coverage-tag:nth-child(2) { animation-delay: 0.2s; }
+    .coverage-tag:nth-child(3) { animation-delay: 0.3s; }
+    .coverage-tag:nth-child(4) { animation-delay: 0.4s; }
+    .coverage-tag:nth-child(5) { animation-delay: 0.5s; }
+    .coverage-tag:nth-child(6) { animation-delay: 0.6s; }
+    .coverage-tag:nth-child(7) { animation-delay: 0.7s; }
+    .coverage-tag:nth-child(8) { animation-delay: 0.8s; }
+
+    .checkout-preview {
+      max-width: 600px;
+      margin: 20px auto;
+      background: var(--latte-cream);
+      border: 4px solid var(--deep-cocoa);
+      padding: 25px;
+      box-shadow: 6px 6px 0 var(--deep-cocoa);
+      animation: zoomIn 0.6s ease-out;
+    }
+
+    .checkout-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-family: var(--font-body);
+      color: var(--dark-roast);
+    }
+
+    .delivery-select {
+      font-family: var(--font-pixel);
+      font-size: 0.7rem;
+      background: var(--warm-mocha);
+      color: var(--latte-cream);
+      border: 2px solid var(--deep-cocoa);
+      padding: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .divider-dots {
+      border-top: 2px dashed var(--warm-mocha);
+      margin: 15px 0;
+    }
+
+    .total-row {
+      font-family: var(--font-pixel);
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .proceed-btn, .continue-btn {
+      width: 100%;
+      font-family: var(--font-pixel);
+      font-size: 0.85rem;
+      padding: 15px;
+      margin-top: 15px;
+      border: 4px solid var(--deep-cocoa);
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .proceed-btn {
+      background: var(--pixel-orange);
+      color: var(--white);
+      box-shadow: 6px 6px 0 var(--deep-cocoa);
+    }
+
+    .proceed-btn:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 var(--deep-cocoa);
+    }
+
+    .continue-btn {
+      background: var(--latte-cream);
+      color: var(--dark-roast);
+      border: 3px solid var(--deep-cocoa);
+    }
+
+    .continue-btn:hover { background: var(--caramel-glow); }
+
+    .site-footer {
+      background: var(--dark-roast);
+      color: var(--latte-cream);
+      padding: 18px 5vw;
+      border-top: 6px solid var(--warm-mocha);
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-body);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      :root { --header-height: 70px; }
+
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 85%;
+        max-width: 340px;
+        height: calc(100vh - var(--header-height));
+        transform: translateX(110%);
+        flex-direction: column;
+        gap: 12px;
+        padding: 22px;
+        background: var(--dark-roast);
+        border-left: 6px solid var(--warm-mocha);
+        z-index: 1300;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-links.open { transform: translateX(0); }
+
+      .nav-links .nav-btn {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 14px;
+      }
+
+      .payment-grid { grid-template-columns: 1fr; }
+
+      .delivery-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .coverage-tags { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">8-Bit Café</div>
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a class="nav-btn" href="about.html">ABOUT</a>
+      <a class="nav-btn" href="menu-coffee.html">MENU</a>
+      <a class="nav-btn" href="index.html">HOME</a>
+      <a class="nav-btn" href="orders.html">ORDERS</a>
+      <a class="nav-btn" href="location.html">LOCATION</a>
+    </nav>
+  </header>
+
+  <main class="content-container">
+    <section class="page location-section">
+      <div class="pixel-bar">FIND US HERE</div>
+
+      <div class="location-map-container">
+        <div class="map-box">
+          <div class="map-pin">📍</div>
+          <div class="map-text">
+            <div class="map-title">8-Bit Café</div>
+            <div class="map-address">#1 Holy Angel St</div>
+            <div class="map-address">Angeles City, 2009</div>
+            <div class="map-address">Pampanga, Philippines</div>
+          </div>
+        </div>
+
+        <div class="info-row-box">
+          <div class="info-icon">🕐</div>
+          <div class="info-content">
+            <div class="info-title">OPERATING HOURS</div>
+            <div class="info-detail">Mon-Fri: 8:00 AM - 9:00 PM</div>
+            <div class="info-detail">Sat: 9:00 AM - 10:00 PM</div>
+            <div class="info-detail">Sun: 10:00 AM - 8:00 PM</div>
+          </div>
+        </div>
+
+        <div class="info-row-box">
+          <div class="info-icon">📞</div>
+          <div class="info-content">
+            <div class="info-title">CONTACT</div>
+            <div class="info-detail">Phone: +63 0923 872 3281</div>
+            <div class="info-detail">Email: araos@student.hau.edu.ph</div>
+            <div class="info-detail">Email: avdizon@student.hau.edu.ph</div>
+            <div class="info-detail">Email: ray@student.hau.edu.ph</div>
+          </div>
+        </div>
+
+        <div class="info-row-box">
+          <div class="info-icon">🚗</div>
+          <div class="info-content">
+            <div class="info-title">PARKING</div>
+            <div class="info-detail">Free parking available</div>
+            <div class="info-detail">Street parking at the mall</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pixel-bar" style="margin-top: 40px;">PAYMENT OPTIONS</div>
+      
+      <div class="payment-intro">
+        We accept multiple payment methods for your convenience. Choose your preferred option at checkout!
+      </div>
+
+      <div class="payment-grid">
+        <div class="payment-card">
+          <div class="payment-icon">⚖️</div>
+          <div class="payment-title">Cash on Delivery</div>
+          <div class="payment-desc">Pay with cash when your order arrives. Perfect for those who prefer traditional payment methods. No additional fees apply!</div>
+          <button class="payment-btn">AVAILABLE</button>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-icon">💳</div>
+          <div class="payment-title">Credit/Debit Card</div>
+          <div class="payment-desc">We accept Visa, Mastercard, JCB, and American Express. Secure payment processing via Stripe or PayPal. Contactless options also available!</div>
+          <button class="payment-btn">SECURE</button>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-icon">📱</div>
+          <div class="payment-title">E-Wallet</div>
+          <div class="payment-desc">GCash, PayMaya, GrabPay, and more! Quick and convenient digital payments. Earn rewards points with every transaction.</div>
+          <button class="payment-btn">POPULAR</button>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-icon">🌐</div>
+          <div class="payment-title">Online Banking</div>
+          <div class="payment-desc">Direct bank transfer via BDO, BPI, Metrobank, and more. Safe, secure, and easy. No cards necessary, just your bank app!</div>
+          <button class="payment-btn">VERIFIED</button>
+        </div>
+      </div>
+
+      <div class="payment-notes">
+        <div class="note-title">⚠️ Payment Notes:</div>
+        <ul class="note-list">
+          <li>All online payments require confirmation before order processing</li>
+          <li>For cash on delivery, exact change is appreciated</li>
+          <li>Digital receipts will be sent to your email</li>
+          <li>Refunds are processed within 3-5 business days</li>
+        </ul>
+      </div>
+
+      <div class="pixel-bar" style="margin-top: 40px;">DELIVERY INFO</div>
+
+      <div class="delivery-options">
+        <div class="delivery-card">
+          <div class="delivery-icon">📋</div>
+          <div class="delivery-content">
+            <div class="delivery-title">PICKUP</div>
+            <div class="delivery-text">
+              Grab your order directly from our café! Head to 8-Bit Café at #1 Holy Angel St, Angeles City, and pick up your order at the designated pickup counter. It's FREE!
+            </div>
+          </div>
+        </div>
+
+        <div class="delivery-card">
+          <div class="delivery-icon">🚚</div>
+          <div class="delivery-content">
+            <div class="delivery-title">STANDARD DELIVERY</div>
+            <div class="delivery-text">
+              We'll deliver your order straight to your door! Available within Metro Manila. Takes around 30–45 minutes, depending on traffic conditions. Minimum order: ₱200 + ₱50 delivery fee.
+            </div>
+          </div>
+        </div>
+
+        <div class="delivery-card">
+          <div class="delivery-icon">⚡</div>
+          <div class="delivery-content">
+            <div class="delivery-title">EXPRESS DELIVERY</div>
+            <div class="delivery-text">
+              Lightning fast service! Get your order within 15-20 minutes! Priority handling by expert couriers. Available during peak hours. Minimum order: ₱300 + ₱100 express fee.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery-coverage">
+        <div class="coverage-title">📦 Delivery Coverage Areas</div>
+        <div class="coverage-tags">
+          <span class="coverage-tag">QUEZON CITY</span>
+          <span class="coverage-tag">MANILA</span>
+          <span class="coverage-tag">MAKATI</span>
+          <span class="coverage-tag">PASIG</span>
+          <span class="coverage-tag">TAGUIG</span>
+          <span class="coverage-tag">MANDALUYONG</span>
+          <span class="coverage-tag">SAN JUAN</span>
+          <span class="coverage-tag">PASAY</span>
+        </div>
+      </div>
+
+      <div class="pixel-bar" style="margin-top: 40px;">READY TO ORDER?</div>
+
+      <div class="checkout-preview">
+        <div class="checkout-row">
+          <span>Cart Items:</span>
+          <span id="location-cart-items">0</span>
+        </div>
+        <div class="checkout-row">
+          <span>Subtotal:</span>
+          <span id="location-subtotal">₱0.00</span>
+        </div>
+        <div class="checkout-row">
+          <span>Delivery Fee:</span>
+          <select class="delivery-select" id="deliveryFeeSelect">
+            <option value="0">Choose Type...</option>
+            <option value="0">Pickup (Free)</option>
+            <option value="50">Standard (₱50)</option>
+            <option value="100">Express (₱100)</option>
+          </select>
+        </div>
+        <div class="divider-dots"></div>
+        <div class="checkout-row total-row">
+          <span>TOTAL:</span>
+          <span id="location-total">₱0.00</span>
+        </div>
+
+        <button class="proceed-btn" onclick="location.href='orders.html'">PROCEED TO CHECKOUT ▶</button>
+        <button class="continue-btn" onclick="location.href='menu-coffee.html'">⏴ CONTINUE SHOPPING</button>
+      </div>
+      
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2025 8-Bit Café</div>
+      <div class="socials">📍 • ☕ • 🎮</div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+      hamburger.onclick = () => {
+        const isOpen = navLinks.classList.contains('open');
+        navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', !isOpen);
+      };
+    }
+
+    function getCart() {
+      try {
+        const cart = localStorage.getItem('cafe_cart');
+        return cart ? JSON.parse(cart) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function updateLocationCart() {
+      const cart = getCart();
+      const items = Object.entries(cart);
+      const totalItems = items.reduce((sum, [_, item]) => sum + item.quantity, 0);
+      const subtotal = items.reduce((sum, [_, item]) => sum + (item.price * item.quantity), 0);
+      
+      document.getElementById('location-cart-items').textContent = totalItems;
+      document.getElementById('location-subtotal').textContent = `₱${subtotal.toFixed(2)}`;
+      
+      updateTotal();
+    }
+
+    function updateTotal() {
+      const cart = getCart();
+      const items = Object.entries(cart);
+      const subtotal = items.reduce((sum, [_, item]) => sum + (item.price * item.quantity), 0);
+      const deliveryFee = parseFloat(document.getElementById('deliveryFeeSelect').value) || 0;
+      const total = subtotal + deliveryFee;
+      
+      document.getElementById('location-total').textContent = `₱${total.toFixed(2)}`;
+    }
+
+    document.getElementById('deliveryFeeSelect').addEventListener('change', updateTotal);
+
+    document.addEventListener('DOMContentLoaded', updateLocationCart);
+  </script>
+</body>
+</html>
