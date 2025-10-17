@@ -118,6 +118,12 @@
     .item-badge.yellow { background: #FFEB3B; color: #3E2723; }
     .item-badge.red { background: #F44336; color: white; }
     .item-badge.clear { background: #B0BEC5; color: #3E2723; }
+
+    .item-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -153,7 +159,7 @@
         <div class="card menu-item" onclick="addItemToCart('Emerald Byte', 6.00)">
           <div class="item-badge green">HEALTHY</div>
           <h3 class="item-name">Emerald Byte</h3>
-          <div class="item-image-box">🍵</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/2c/83/1d/2c831dede36b8782ba8fdf095f8c8b17.jpg" alt="Emerald Byte"></div>
           <p class="item-description">
             A mysterious green tea blend infused with ancient herbs and a touch of honey. Grants +15 calm and +10 clarity. Perfect for meditation sessions.
           </p>
@@ -177,7 +183,7 @@
         <div class="card menu-item" onclick="addItemToCart('Potion of Health', 4.00)">
           <div class="item-badge blue">FRESH</div>
           <h3 class="item-name">Potion of Health</h3>
-          <div class="item-image-box">🧃</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/65/99/5f/65995fade29be36221f93373e432e3fd.jpg" alt="Potion of Health"></div>
           <p class="item-description">
             A refreshing fruit juice blend that instantly restores 50 HP! Made with real fruits and zero artificial anything. Keeps you hydrated for the boss battles ahead.
           </p>
@@ -201,7 +207,7 @@
         <div class="card menu-item" onclick="addItemToCart('Sugar Rush', 7.80)">
           <div class="item-badge pink">SWEET!</div>
           <h3 class="item-name">Sugar Rush</h3>
-          <div class="item-image-box">🥤</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/fa/48/ae/fa48ae445b3124b40d3f613a68336496.jpg" alt="Sugar Rush"></div>
           <p class="item-description">
             The ultimate combo attack! Our signature chocolate milkshake topped with whipped cream and crushed cookies. May cause temporary invincibility and uncontrollable happiness.
           </p>
@@ -225,7 +231,7 @@
         <div class="card menu-item" onclick="addItemToCart('Healing Herb Tea (Hot)', 4.00)">
           <div class="item-badge green">HOT HP</div>
           <h3 class="item-name">Healing Herb Tea (Hot)</h3>
-          <div class="item-image-box">🍵</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/f3/24/ed/f324ed18f2f86dbc0a4450d6a3be7d46.jpg" alt="Healing Herb Tea"></div>
           <p class="item-description">
             A warm, soothing blend of chamomile, peppermint, and lemon. Perfect for recovering after a tough dungeon run. Restores HP and provides a calming buff.
           </p>
@@ -249,7 +255,7 @@
         <div class="card menu-item" onclick="addItemToCart('Warp Zone Water (Sparkling)', 3.50)">
           <div class="item-badge clear">CRISP</div>
           <h3 class="item-name">Warp Zone Water (Sparkling)</h3>
-          <div class="item-image-box">💧</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/60/e2/d1/60e2d1b48a082e355fa86d7500579d87.jpg" alt="Warp Zone Water"></div>
           <p class="item-description">
             Plain water, but with an exhilarating, fizzy twist! The bubbles grant a temporary boost to focus and a quick refresh. The perfect sidekick for any meal.
           </p>
@@ -273,7 +279,7 @@
         <div class="card menu-item" onclick="addItemToCart('Phoenix Down Fruit Shake', 7.50)">
           <div class="item-badge yellow">EPIC</div>
           <h3 class="item-name">Phoenix Down Fruit Shake</h3>
-          <div class="item-image-box">🍓</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/f8/86/5c/f8865cbb50faeb2400d4d6608c341cdf.jpg" alt="Phoenix Down Fruit Shake"></div>
           <p class="item-description">
             A creamy, thick shake blended with mangoes, strawberries, and a secret tropical fruit. Tastes like a 100% successful revival. Gives you the energy to come back stronger than before!
           </p>
@@ -297,7 +303,7 @@
         <div class="card menu-item" onclick="addItemToCart('Pixel Punch', 5.00)">
           <div class="item-badge red">COMBO</div>
           <h3 class="item-name">Pixel Punch</h3>
-          <div class="item-image-box">🍹</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/fc/dd/10/fcdd1041e6927ed08984f6be3812c60b.jpg" alt="Pixel Punch"></div>
           <p class="item-description">
             An intensely flavorful, neon-red punch mix of cranberry, cherry, and citrus. A fruity combo that delivers a satisfying flavor attack! Grants a quick, sweet boost without any coffee jitters.
           </p>
@@ -321,7 +327,7 @@
         <div class="card menu-item" onclick="addItemToCart('Boss Rush Slushie', 6.00)">
           <div class="item-badge blue">FREEZE</div>
           <h3 class="item-name">Boss Rush Slushie</h3>
-          <div class="item-image-box">🍧</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/e8/4b/b8/e84bb8e09da52174ea3176fbfa63c925.jpg" alt="Boss Rush Slushie"></div>
           <p class="item-description">
             A giant, icy blue raspberry slushie. The perfect brain-freeze defense against summer heat or a final boss. Highly refreshing and great for quickly lowering your internal temperature meter.
           </p>
@@ -345,7 +351,7 @@
         <div class="card menu-item" onclick="addItemToCart('The Legend of Latte (No Coffee)', 7.00)">
           <div class="item-badge green">ULTIMATE</div>
           <h3 class="item-name">The Legend of Latte (No Coffee)</h3>
-          <div class="item-image-box">🥛</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/96/28/cf/9628cffee8fd4ed73f6b158c6b63ebe1.jpg" alt="The Legend of Latte"></div>
           <p class="item-description">
             A rich, creamy, and spiced turmeric latte (Golden Milk). Warm, anti-inflammatory, and purely restorative. This ancient beverage is legendary for its healing properties. The ultimate recovery potion!
           </p>
