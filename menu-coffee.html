@@ -114,6 +114,11 @@
     .menu-item {
       position: relative;
     }
+
+    .item-badge.hot { background: #FF5722; color: white; }
+    .item-badge.cold { background: #2196F3; color: white; }
+    .item-badge.decaf { background: #4CAF50; color: white; }
+
   </style>
 </head>
 <body>
@@ -124,12 +129,13 @@
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
-    <nav class="nav-links">
-      <a class="nav-btn" href="about.html">ABOUT</a>
-      <a class="nav-btn" href="menu-coffee.html">MENU</a>
-      <a class="nav-btn" href="index.html">HOME</a>
-      <a class="nav-btn" href="orders.html">ORDERS</a>
-    </nav>
+<nav class="nav-links">
+  <a class="nav-btn" href="about.html">ABOUT</a>
+  <a class="nav-btn" href="menu-coffee.html">MENU</a>
+  <a class="nav-btn" href="index.html">HOME</a>
+  <a class="nav-btn" href="orders.html">ORDERS</a>
+  <a class="nav-btn" href="location.html">LOCATION</a>
+</nav>
   </header>
 
   <main class="content-container">
@@ -144,31 +150,23 @@
 
       <div class="menu-grid">
         <div class="card menu-item" onclick="addItemToCart('Pixel Espresso', 5.00)">
-          <div class="item-badge">CLASSIC</div>
+          <div class="item-badge hot">CLASSIC</div>
           <h3 class="item-name">Pixel Espresso</h3>
           <div class="item-image-box">☕</div>
           <p class="item-description">
-            The original 8-bit brew! A concentrated shot of pure energy that packs a punch. Small but mighty, this espresso delivers maximum flavor in minimum pixels. Perfect for speedrunners who need instant power-ups.
+            The original 8-bit brew! A concentrated shot of pure energy that packs a punch. Small but mighty, this espresso delivers maximum flavor in minimum pixels.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">ENERGY</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">SMOOTH</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div><div class="stat-pip"></div>
               </div>
             </div>
           </div>
@@ -176,31 +174,23 @@
         </div>
 
         <div class="card menu-item" onclick="addItemToCart('Level-Up Latte', 6.50)">
-          <div class="item-badge">POPULAR</div>
+          <div class="item-badge hot">POPULAR</div>
           <h3 class="item-name">Level-Up Latte</h3>
           <div class="item-image-box">☕</div>
           <p class="item-description">
-            Ascend to new heights with this creamy masterpiece! Rich espresso meets velvety steamed milk in perfect harmony. Each sip grants +10 focus and +5 happiness. Warning: May cause productivity achievements.
+            Ascend to new heights with this creamy masterpiece! Rich espresso meets velvety steamed milk in perfect harmony. Each sip grants +10 focus.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">ENERGY</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">SMOOTH</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
           </div>
@@ -208,36 +198,173 @@
         </div>
 
         <div class="card menu-item" onclick="addItemToCart('Power-Up Cappuccino', 6.00)">
-          <div class="item-badge">NEW!</div>
+          <div class="item-badge hot">NEW!</div>
           <h3 class="item-name">Power-Up Cappuccino</h3>
           <div class="item-image-box">☕</div>
           <p class="item-description">
-            Unlock the ultimate power-up! This frothy favorite combines bold espresso with clouds of microfoam. The perfect balance of strength and smoothness. Bonus: Comes with latte art that'll make your Instagram go legendary.
+            Unlock the ultimate power-up! This frothy favorite combines bold espresso with clouds of microfoam. The perfect balance of strength and smoothness.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">ENERGY</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">SMOOTH</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
               </div>
             </div>
           </div>
           <div class="price-bar">= 6.00$</div>
         </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Glitch Americano', 5.00)">
+          <div class="item-badge cold">GLITCH</div>
+          <h3 class="item-name">Glitch Americano</h3>
+          <div class="item-image-box">🧊</div>
+          <p class="item-description">
+            A deceptively simple Americano over ice, but with an extra shot of randomness! Grants maximum water-intake and pure, crisp caffeine. Warning: May cause temporary screen tearing (from joy).
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">ENERGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">PURE</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 5.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Invincibility Iced Coffee', 6.50)">
+          <div class="item-badge cold">ICY BOOST</div>
+          <h3 class="item-name">Invincibility Iced Coffee</h3>
+          <div class="item-image-box">🥤</div>
+          <p class="item-description">
+            Strong, cold-brewed coffee that makes you feel unstoppable. Slowly steeped for 12 hours for a super smooth, less acidic, and highly caffeinated experience. Perfect for an all-day grind!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">ENERGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SMOOTH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 6.50$</div>
+        </div>
+        
+        <div class="card menu-item" onclick="addItemToCart('High Score Hot Chocolate', 4.50)">
+          <div class="item-badge hot">SWEET</div>
+          <h3 class="item-name">High Score Hot Chocolate</h3>
+          <div class="item-image-box">🍫</div>
+          <p class="item-description">
+            A rich, decadent hot chocolate made with dark cocoa and topped with a mountain of whipped cream. Perfect for celebrating a high score or just recharging your comfort meter. Grants +20 happiness!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">ENERGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div><div class="stat-pip"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">RICH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 4.50$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Save Point Shot', 3.00)">
+          <div class="item-badge">MINI</div>
+          <h3 class="item-name">Save Point Shot</h3>
+          <div class="item-image-box">🥃</div>
+          <p class="item-description">
+            A single, potent shot of espresso. Quick, intense, and serves as a temporary save point before you tackle the next big challenge. Grab and go, hero!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">ENERGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SPEED</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 3.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('End Boss Blend (Decaf)', 6.80)">
+          <div class="item-badge decaf">DE-CAFF</div>
+          <h3 class="item-name">End Boss Blend (Decaf)</h3>
+          <div class="item-image-box">☕</div>
+          <p class="item-description">
+            The flavor of victory without the all-nighter buff. A rich, dark roast with notes of chocolate and caramel, but 99% of the caffeine has been defeated. Enjoy the flavor, get the rest!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">FLAVOR</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SLEEP</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 6.80$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Player 2 Pour Over', 8.00)">
+          <div class="item-badge hot">CRAFT</div>
+          <h3 class="item-name">Player 2 Pour Over</h3>
+          <div class="item-image-box">💧</div>
+          <p class="item-description">
+            A meticulously brewed single-origin coffee. Choose your beans and watch as your personal barista manually crafts your perfect cup. It's the ultimate co-op experience for you and your tastebuds.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">STRENGTH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">QUALITY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 8.00$</div>
+        </div>
+
       </div>
 
       <div style="display:flex;justify-content:center;gap:12px;margin-top:18px;flex-wrap:wrap">
