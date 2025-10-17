@@ -619,3 +619,357 @@ body::before {
     font-size: 1rem;
   }
 }
+
+/* ===========================
+   LOCATION PAGE STYLES (NEW - Match Screenshot)
+   =========================== */
+
+/* Style for the main Location card/section */
+.location-section {
+  padding: 30px 20px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Green Banner: CURRENTLY OPEN */
+.open-status-banner {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--dark-roast); /* Dark text */
+  background-color: #4CAF50; /* Green background */
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border: 4px solid #388E3C; /* Darker green border */
+  box-shadow: 6px 6px 0 var(--deep-cocoa); /* Pixel shadow */
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite; /* Pulsing effect as seen in game UIs */
+}
+
+/* Red Address/Warning Box (for a dramatic look) */
+.address-error-box {
+  background: #F44336; /* Red background */
+  border: 4px solid #C62828; /* Dark red border */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(244, 67, 54, 0.8); /* Red glow/shadow */
+}
+
+.address-error-box h2 {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--white);
+  text-shadow: 2px 2px 0 var(--black);
+  margin-bottom: 15px;
+}
+
+.address-error-box p {
+  font-family: var(--font-body);
+  color: #FFEBEE; /* Light pink/red text */
+  line-height: 1.6;
+}
+
+/* Map Embed Placeholder */
+.map-embed {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 20px auto;
+  border: 4px solid var(--pixel-orange);
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00FF00;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  box-shadow: 8px 8px 0 var(--dark-roast);
+}
+
+/* Hours List */
+.hours-list-container {
+  background: rgba(84, 43, 12, 0.7); /* Deep Cocoa transparent */
+  border: 3px solid var(--rustic-amber);
+  border-radius: 6px;
+  padding: 20px;
+  margin: 30px auto 0;
+  max-width: 500px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.hours-list-container h2 {
+  font-size: 12px;
+  color: #FFD700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--rustic-amber);
+  padding-bottom: 10px;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.hours-list li {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--latte-cream);
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+  display: flex;
+  justify-content: space-between;
+}
+.hours-list li:last-child {
+  border-bottom: none;
+}
+.hours-list li .time {
+  color: #D4AF37; /* Gold for time */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 6px 6px 0 var(--deep-cocoa);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 8px 8px 0 var(--deep-cocoa);
+  }
+}
+
+/* Ensure the current page style is defined for the navbar */
+.nav-links a.current-page {
+  background-color: var(--pixel-orange);
+  color: var(--dark-roast);
+  box-shadow: 0 4px 0 var(--deep-cocoa);
+  transform: translateY(0);
+}
+.nav-links a.current-page:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--deep-cocoa);
+}
+
+/* ===========================
+   LOCATION PAGE STYLES (FINAL MATCH)
+   =========================== */
+
+.location-section {
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Green Banner: CURRENTLY OPEN */
+.open-status-banner {
+    font-family: var(--font-pixel);
+    font-size: 14px;
+    color: var(--dark-roast);
+    background-color: #4CAF50; /* Green */
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border: 4px solid #388E3C;
+    box-shadow: 6px 6px 0 var(--deep-cocoa);
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite;
+}
+
+/* Red Address Box */
+.address-error-box {
+    background: #F44336; /* Red */
+    border: 4px solid #C62828; /* Dark red */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(244, 67, 54, 0.8);
+}
+
+.address-error-box h2 {
+    font-family: var(--font-pixel);
+    font-size: 14px;
+    color: var(--white);
+    text-shadow: 2px 2px 0 var(--black);
+    margin-bottom: 15px;
+}
+
+.address-error-box p {
+    font-family: var(--font-body);
+    color: #FFEBEE;
+    line-height: 1.6;
+}
+
+/* Map Embed Placeholder */
+.map-embed {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    border: 4px solid var(--pixel-orange);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00FF00;
+    font-family: var(--font-pixel);
+    font-size: 14px;
+    box-shadow: 8px 8px 0 var(--dark-roast);
+}
+
+/* Hours List Container */
+.hours-list-container {
+    background: rgba(84, 43, 12, 0.7);
+    border: 3px solid var(--rustic-amber);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 30px auto 0;
+    max-width: 500px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.hours-list-container h2 {
+    font-size: 12px;
+    color: #FFD700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--rustic-amber);
+    padding-bottom: 10px;
+}
+
+.hours-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.hours-list li {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: var(--latte-cream);
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    display: flex;
+    justify-content: space-between;
+}
+.hours-list li:last-child {
+    border-bottom: none;
+}
+.hours-list li .time {
+    color: #D4AF37;
+}
+
+/* Info Box (Payment/Delivery) */
+.info-box {
+    background: rgba(84, 43, 12, 0.7);
+    border: 3px solid var(--rustic-amber);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.info-box h2 {
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    color: #FFD700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--rustic-amber);
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+.payment-list {
+    list-style: none;
+    padding: 0;
+    font-family: var(--font-pixel);
+    font-size: 10px;
+}
+
+.payment-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    color: var(--latte-cream);
+}
+
+.delivery-details p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--latte-cream);
+}
+
+.delivery-details .highlight {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: #4CAF50;
+    display: block;
+    margin-top: 10px;
+}
+
+/* ===========================
+   ORDERS PAGE STYLES (MATCH ORDERS SCREENSHOT)
+   =========================== */
+
+/* Style for the summary section background, matching screenshot double shadow */
+.cart-summary {
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 4px solid var(--rustic-amber);
+  text-align: right;
+  /* Double-line pixel shadow for the summary box */
+  box-shadow: 4px 4px 0 var(--dark-roast), 
+              8px 8px 0 rgba(0, 0, 0, 0.4); 
+  padding: 10px 15px;
+}
+
+/* Style for each line in the summary */
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.summary-line span:first-child {
+  /* Keys like SUBTOTAL, TAX */
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--latte-cream);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-line span:last-child {
+  /* Values like $10.00 */
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--pixel-orange);
+}
+
+/* Style for the final total line */
+.total-line {
+  padding-top: 8px;
+  margin-top: 10px;
+  border-top: 2px dashed var(--rustic-amber); /* Dashed line separator */
+}
+
+.total-line span:last-child {
+  font-size: 14px;
+  color: #FFD700; /* Bright Gold for the final price */
+  text-shadow: 1px 1px 0 var(--dark-roast);
+}
+
+/* Checkout Button style */
+.checkout-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--dark-roast);
+  background-color: #4CAF50;
+  border: 4px solid var(--dark-roast);
+  border-radius: 6px;
+  box-shadow: 0 6px 0 #388E3C;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.checkout-btn:active {
+  box-shadow: 0 2px 0 #388E3C;
+  transform: translateY(4px);
+}
