@@ -129,10 +129,11 @@
       50% { box-shadow: 0 0 15px #FFD700; }
     }
 
-    .item-badge.chef {
-      background: #FF5722;
-      color: white;
-    }
+    .item-badge.chef { background: #FF5722; color: white; }
+    .item-badge.green { background: #4CAF50; color: white; }
+    .item-badge.blue { background: #2196F3; color: white; }
+    .item-badge.chocolate { background: #542B0C; color: white; }
+
   </style>
 </head>
 <body>
@@ -146,12 +147,14 @@
       <span class="hamburger-line"></span>
     </button>
 
-    <nav class="nav-links" role="navigation" aria-label="Main navigation">
-      <a class="nav-btn" href="about.html">ABOUT</a>
-      <a class="nav-btn" href="menu-coffee.html">MENU</a>
-      <a class="nav-btn" href="index.html">HOME</a>
-      <a class="nav-btn" href="orders.html">ORDERS</a>
-    </nav>
+<nav class="nav-links" role="navigation" aria-label="Main navigation">
+<nav class="nav-links">
+  <a class="nav-btn" href="about.html">ABOUT</a>
+  <a class="nav-btn" href="menu-coffee.html">MENU</a>
+  <a class="nav-btn" href="index.html">HOME</a>
+  <a class="nav-btn" href="orders.html">ORDERS</a>
+  <a class="nav-btn" href="location.html">LOCATION</a>
+</nav>
   </header>
 
   <main class="content-container">
@@ -160,7 +163,7 @@
 
       <div class="menu-intro">
         <h2>🍪 COLLECT RARE DROPS! 🍪</h2>
-        <p>Every great adventurer needs sustenance! Our bakery crafts pixel-perfect pastries that are both delicious and Instagram-worthy. Each item is baked fresh daily using secret recipes passed down through generations of pixel chefs. Pair them with your favorite drink for combo bonuses!</p>
+        <p>Every great adventurer needs sustenance! Our bakery crafts pixel-perfect pastries that are both delicious and Instagram-worthy. Each item is baked fresh daily using secret recipes passed down through generations of pixel chefs.</p>
         <p style="font-size: 12px; color: #D4AF37; margin-top: 8px;">💡 Limited stock available - collect them all!</p>
       </div>
 
@@ -170,27 +173,19 @@
           <h3 class="item-name">Mana Macaroons</h3>
           <div class="item-image-box">🍪</div>
           <p class="item-description">
-            Delicate almond cookies that melt in your mouth! Each macaroon is carefully crafted with vibrant colors and filled with buttercream that restores +5 mana per bite. Available in multiple magical flavors. Warning: Highly addictive and may cause joy!
+            Delicate almond cookies that melt in your mouth! Each macaroon is filled with buttercream that restores +5 mana per bite. Available in multiple magical flavors.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">SWEET</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">FANCY</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
           </div>
@@ -202,27 +197,19 @@
           <h3 class="item-name">8-Bit Cookies</h3>
           <div class="item-image-box">🍪</div>
           <p class="item-description">
-            Classic chocolate chip cookies with a retro twist! Baked to golden-brown perfection with chunks of premium chocolate. Crispy on the outside, chewy on the inside - just like grandma used to make (if grandma was a pixel artist). Perfect for dunking or solo snacking!
+            Classic chocolate chip cookies with a retro twist! Baked to golden-brown perfection with chunks of premium chocolate. Crispy on the outside, chewy on the inside.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">SWEET</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">COMFORT</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
           </div>
@@ -234,32 +221,169 @@
           <h3 class="item-name">Pixel Croissant</h3>
           <div class="item-image-box">🥐</div>
           <p class="item-description">
-            An epic-tier pastry with 64 buttery layers! Flaky, golden, and absolutely legendary. This French masterpiece is baked fresh every morning and grants +20 sophistication. Pair it with coffee for the ultimate breakfast combo. Achievement unlocked: Fancy Breakfast!
+            An epic-tier pastry with 64 buttery layers! Flaky, golden, and absolutely legendary. Baked fresh every morning and grants +20 sophistication.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">FLAKY</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">FANCY</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
           </div>
           <div class="price-bar">= 7.80$</div>
         </div>
+
+        <div class="card menu-item" onclick="addToCart('Warp Pipe Cinnamon Roll', 5.50)">
+          <div class="item-badge green">WARP</div>
+          <h3 class="item-name">Warp Pipe Cinnamon Roll</h3>
+          <div class="item-image-box">🌀</div>
+          <p class="item-description">
+            A giant, gooey cinnamon roll topped with a swirl of vanilla cream cheese frosting. One bite is a fast travel to pure dessert heaven. Share it for a co-op bonus!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SWEET</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">GOOEY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 5.50$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addToCart('The Legend of Donut', 3.00)">
+          <div class="item-badge blue">QUEST</div>
+          <h3 class="item-name">The Legend of Donut</h3>
+          <div class="item-image-box">🍩</div>
+          <p class="item-description">
+            A light, fluffy donut glazed with a classic sugar ring. Simple, iconic, and absolutely necessary for any quest. A timeless artifact of breakfast bliss!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SWEET</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">FLUFFY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 3.00$</div>
+        </div>
+        
+        <div class="card menu-item" onclick="addToCart('Power Star Muffin', 4.50)">
+          <div class="item-badge golden">POWER-UP</div>
+          <h3 class="item-name">Power Star Muffin</h3>
+          <div class="item-image-box">🌟</div>
+          <p class="item-description">
+            A moist blueberry muffin, bursting with flavor. Grants a quick and reliable boost to your morning stats. It's the dependable power-up you need to start the day.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">MOIST</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">FRUIT</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 4.50$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addToCart('Final Fantasy Funnel Cake', 7.00)">
+          <div class="item-badge chef">FESTIVE</div>
+          <h3 class="item-name">Final Fantasy Funnel Cake</h3>
+          <div class="item-image-box">🎂</div>
+          <p class="item-description">
+            A deep-fried, crispy pastry topped with powdered sugar and your choice of syrup (maple or chocolate). A spectacular feast worthy of any victory parade!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SWEET</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">CRISPY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 7.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addToCart('Boss Level Brownie', 6.00)">
+          <div class="item-badge chocolate">MAX COMFORT</div>
+          <h3 class="item-name">Boss Level Brownie</h3>
+          <div class="item-image-box">🍫</div>
+          <p class="item-description">
+            The ultimate chocolate showdown! A dense, fudgy brownie packed with three types of chocolate chips. It's the most satisfying, high-difficulty dessert we offer. Recommended for expert eaters only.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">RICH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">DENSITY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 6.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addToCart('Shield Pretzel', 4.00)">
+          <div class="item-badge chef">SAVORY</div>
+          <h3 class="item-name">Shield Pretzel</h3>
+          <div class="item-image-box">🥨</div>
+          <p class="item-description">
+            A warm, soft, and lightly salted pretzel, perfect for a defensive snack. Comes with a side of cheesy "Dip of Defense." Grants +10 stamina for savory cravings.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SALTY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">CHEWY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 4.00$</div>
+        </div>
+
       </div>
 
       <div style="display:flex;justify-content:center;gap:12px;margin-top:18px;flex-wrap:wrap">
