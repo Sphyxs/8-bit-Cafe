@@ -112,20 +112,12 @@
       z-index: 1;
     }
 
-    .item-badge.green {
-      background: #4CAF50;
-      color: white;
-    }
-
-    .item-badge.blue {
-      background: #2196F3;
-      color: white;
-    }
-
-    .item-badge.pink {
-      background: #E91E63;
-      color: white;
-    }
+    .item-badge.green { background: #4CAF50; color: white; }
+    .item-badge.blue { background: #2196F3; color: white; }
+    .item-badge.pink { background: #E91E63; color: white; }
+    .item-badge.yellow { background: #FFEB3B; color: #3E2723; }
+    .item-badge.red { background: #F44336; color: white; }
+    .item-badge.clear { background: #B0BEC5; color: #3E2723; }
   </style>
 </head>
 <body>
@@ -137,12 +129,14 @@
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
-    <nav class="nav-links" role="navigation" aria-label="Main navigation">
-      <a class="nav-btn" href="about.html">ABOUT</a>
-      <a class="nav-btn" href="menu-coffee.html">MENU</a>
-      <a class="nav-btn" href="index.html">HOME</a>
-      <a class="nav-btn" href="orders.html">ORDERS</a>
-    </nav>
+<nav class="nav-links" role="navigation" aria-label="Main navigation">
+<nav class="nav-links">
+  <a class="nav-btn" href="about.html">ABOUT</a>
+  <a class="nav-btn" href="menu-coffee.html">MENU</a>
+  <a class="nav-btn" href="index.html">HOME</a>
+  <a class="nav-btn" href="orders.html">ORDERS</a>
+  <a class="nav-btn" href="location.html">LOCATION</a>
+</nav>
   </header>
 
   <main class="content-container">
@@ -161,27 +155,19 @@
           <h3 class="item-name">Emerald Byte</h3>
           <div class="item-image-box">🍵</div>
           <p class="item-description">
-            A mysterious green tea blend infused with ancient herbs and a touch of honey. Grants +15 calm and +10 clarity. Perfect for meditation sessions or when you need to restore your MP. Unlock the zen achievement with every sip!
+            A mysterious green tea blend infused with ancient herbs and a touch of honey. Grants +15 calm and +10 clarity. Perfect for meditation sessions.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">REFRESH</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">HEALTH</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
           </div>
@@ -193,27 +179,19 @@
           <h3 class="item-name">Potion of Health</h3>
           <div class="item-image-box">🧃</div>
           <p class="item-description">
-            A refreshing fruit juice blend that instantly restores 50 HP! Made with real fruits and zero artificial anything. This legendary potion tastes like summer in a glass and keeps you hydrated for the boss battles ahead. Side quest: Try to guess all the fruits!
+            A refreshing fruit juice blend that instantly restores 50 HP! Made with real fruits and zero artificial anything. Keeps you hydrated for the boss battles ahead.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">REFRESH</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">HEALTH</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
               </div>
             </div>
           </div>
@@ -225,32 +203,169 @@
           <h3 class="item-name">Sugar Rush</h3>
           <div class="item-image-box">🥤</div>
           <p class="item-description">
-            The ultimate combo attack! Our signature chocolate milkshake topped with whipped cream, crushed cookies, and a cherry power-up. Warning: May cause temporary invincibility and uncontrollable happiness. Recommended for celebration modes and cheat days!
+            The ultimate combo attack! Our signature chocolate milkshake topped with whipped cream and crushed cookies. May cause temporary invincibility and uncontrollable happiness.
           </p>
           <div class="item-stats">
             <div class="stat">
               <div class="stat-label">SWEET</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
             <div class="stat">
               <div class="stat-label">JOY</div>
               <div class="stat-bar">
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
-                <div class="stat-pip filled"></div>
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
               </div>
             </div>
           </div>
           <div class="price-bar">= 7.80$</div>
         </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Healing Herb Tea (Hot)', 4.00)">
+          <div class="item-badge green">HOT HP</div>
+          <h3 class="item-name">Healing Herb Tea (Hot)</h3>
+          <div class="item-image-box">🍵</div>
+          <p class="item-description">
+            A warm, soothing blend of chamomile, peppermint, and lemon. Perfect for recovering after a tough dungeon run. Restores HP and provides a calming buff.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">WARM</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">CALM</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 4.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Warp Zone Water (Sparkling)', 3.50)">
+          <div class="item-badge clear">CRISP</div>
+          <h3 class="item-name">Warp Zone Water (Sparkling)</h3>
+          <div class="item-image-box">💧</div>
+          <p class="item-description">
+            Plain water, but with an exhilarating, fizzy twist! The bubbles grant a temporary boost to focus and a quick refresh. The perfect sidekick for any meal.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">REFRESH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">FIZZ</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 3.50$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Phoenix Down Fruit Shake', 7.50)">
+          <div class="item-badge yellow">EPIC</div>
+          <h3 class="item-name">Phoenix Down Fruit Shake</h3>
+          <div class="item-image-box">🍓</div>
+          <p class="item-description">
+            A creamy, thick shake blended with mangoes, strawberries, and a secret tropical fruit. Tastes like a 100% successful revival. Gives you the energy to come back stronger than before!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SMOOTH</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">FRUIT</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 7.50$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Pixel Punch', 5.00)">
+          <div class="item-badge red">COMBO</div>
+          <h3 class="item-name">Pixel Punch</h3>
+          <div class="item-image-box">🍹</div>
+          <p class="item-description">
+            An intensely flavorful, neon-red punch mix of cranberry, cherry, and citrus. A fruity combo that delivers a satisfying flavor attack! Grants a quick, sweet boost without any coffee jitters.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">SWEET</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">TANGY</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 5.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('Boss Rush Slushie', 6.00)">
+          <div class="item-badge blue">FREEZE</div>
+          <h3 class="item-name">Boss Rush Slushie</h3>
+          <div class="item-image-box">🍧</div>
+          <p class="item-description">
+            A giant, icy blue raspberry slushie. The perfect brain-freeze defense against summer heat or a final boss. Highly refreshing and great for quickly lowering your internal temperature meter.
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">COLD</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SWEET</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 6.00$</div>
+        </div>
+
+        <div class="card menu-item" onclick="addItemToCart('The Legend of Latte (No Coffee)', 7.00)">
+          <div class="item-badge green">ULTIMATE</div>
+          <h3 class="item-name">The Legend of Latte (No Coffee)</h3>
+          <div class="item-image-box">🥛</div>
+          <p class="item-description">
+            A rich, creamy, and spiced turmeric latte (Golden Milk). Warm, anti-inflammatory, and purely restorative. This ancient beverage is legendary for its healing properties. The ultimate recovery potion!
+          </p>
+          <div class="item-stats">
+            <div class="stat">
+              <div class="stat-label">WARM</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">SPICE</div>
+              <div class="stat-bar">
+                <div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip filled"></div><div class="stat-pip"></div>
+              </div>
+            </div>
+          </div>
+          <div class="price-bar">= 7.00$</div>
+        </div>
+
       </div>
 
       <div style="display:flex;justify-content:center;gap:12px;margin-top:18px;flex-wrap:wrap">
