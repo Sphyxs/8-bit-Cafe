@@ -32,7 +32,7 @@
     }
     
     .item-description {
-      color: #DEB887;
+      color: #3D2B1F;
       font-size: 13px;
       line-height: 1.5;
       margin: 10px 0;
@@ -134,6 +134,12 @@
     .item-badge.blue { background: #2196F3; color: white; }
     .item-badge.chocolate { background: #542B0C; color: white; }
 
+    .item-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
   </style>
 </head>
 <body>
@@ -171,7 +177,7 @@
         <div class="card menu-item" onclick="addToCart('Mana Macaroons', 2.00)">
           <div class="item-badge rainbow">RARE</div>
           <h3 class="item-name">Mana Macaroons</h3>
-          <div class="item-image-box">🍪</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/b4/fd/95/b4fd95ac10f52c0e51da3056c9db6eb7.jpg" alt="Mana Macaroons"></div>
           <p class="item-description">
             Delicate almond cookies that melt in your mouth! Each macaroon is filled with buttercream that restores +5 mana per bite. Available in multiple magical flavors.
           </p>
@@ -195,7 +201,7 @@
         <div class="card menu-item" onclick="addToCart('8-Bit Cookies', 4.00)">
           <div class="item-badge chef">HOMEMADE</div>
           <h3 class="item-name">8-Bit Cookies</h3>
-          <div class="item-image-box">🍪</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/06/02/a0/0602a0b454b59e836603aeb27157776f.jpg" alt="8-Bit Cookies"></div>
           <p class="item-description">
             Classic chocolate chip cookies with a retro twist! Baked to golden-brown perfection with chunks of premium chocolate. Crispy on the outside, chewy on the inside.
           </p>
@@ -219,7 +225,7 @@
         <div class="card menu-item" onclick="addToCart('Pixel Croissant', 7.80)">
           <div class="item-badge golden">EPIC</div>
           <h3 class="item-name">Pixel Croissant</h3>
-          <div class="item-image-box">🥐</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/df/3d/32/df3d3257f22993be9957ba6774e1881f.jpg" alt="Pixel Croissant"></div>
           <p class="item-description">
             An epic-tier pastry with 64 buttery layers! Flaky, golden, and absolutely legendary. Baked fresh every morning and grants +20 sophistication.
           </p>
@@ -243,7 +249,7 @@
         <div class="card menu-item" onclick="addToCart('Warp Pipe Cinnamon Roll', 5.50)">
           <div class="item-badge green">WARP</div>
           <h3 class="item-name">Warp Pipe Cinnamon Roll</h3>
-          <div class="item-image-box">🌀</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/a9/9f/09/a99f09093a3c41d68586d1f136cb0e5f.jpg" alt="Warp Pipe Cinnamon Roll"></div>
           <p class="item-description">
             A giant, gooey cinnamon roll topped with a swirl of vanilla cream cheese frosting. One bite is a fast travel to pure dessert heaven. Share it for a co-op bonus!
           </p>
@@ -267,7 +273,7 @@
         <div class="card menu-item" onclick="addToCart('The Legend of Donut', 3.00)">
           <div class="item-badge blue">QUEST</div>
           <h3 class="item-name">The Legend of Donut</h3>
-          <div class="item-image-box">🍩</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/f4/cb/3f/f4cb3f2f3f394933359070d44183959a.jpg" alt="The Legend of Donut"></div>
           <p class="item-description">
             A light, fluffy donut glazed with a classic sugar ring. Simple, iconic, and absolutely necessary for any quest. A timeless artifact of breakfast bliss!
           </p>
@@ -291,7 +297,7 @@
         <div class="card menu-item" onclick="addToCart('Power Star Muffin', 4.50)">
           <div class="item-badge golden">POWER-UP</div>
           <h3 class="item-name">Power Star Muffin</h3>
-          <div class="item-image-box">🌟</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/2d/41/0d/2d410ded2377e92ce900558849a92347.jpg" alt="Power Star Muffin"></div>
           <p class="item-description">
             A moist blueberry muffin, bursting with flavor. Grants a quick and reliable boost to your morning stats. It's the dependable power-up you need to start the day.
           </p>
@@ -315,7 +321,7 @@
         <div class="card menu-item" onclick="addToCart('Final Fantasy Funnel Cake', 7.00)">
           <div class="item-badge chef">FESTIVE</div>
           <h3 class="item-name">Final Fantasy Funnel Cake</h3>
-          <div class="item-image-box">🎂</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/2f/88/7c/2f887ce78237b240e38c34c41f9a22ae.jpg" alt="Final Fantasy Funnel Cake"></div>
           <p class="item-description">
             A deep-fried, crispy pastry topped with powdered sugar and your choice of syrup (maple or chocolate). A spectacular feast worthy of any victory parade!
           </p>
@@ -339,7 +345,7 @@
         <div class="card menu-item" onclick="addToCart('Boss Level Brownie', 6.00)">
           <div class="item-badge chocolate">MAX COMFORT</div>
           <h3 class="item-name">Boss Level Brownie</h3>
-          <div class="item-image-box">🍫</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/1200x/c0/73/e1/c073e142c5c61f3d46685fdc2659c73c.jpg" alt="Boss Level Brownie"></div>
           <p class="item-description">
             The ultimate chocolate showdown! A dense, fudgy brownie packed with three types of chocolate chips. It's the most satisfying, high-difficulty dessert we offer. Recommended for expert eaters only.
           </p>
@@ -363,7 +369,7 @@
         <div class="card menu-item" onclick="addToCart('Shield Pretzel', 4.00)">
           <div class="item-badge chef">SAVORY</div>
           <h3 class="item-name">Shield Pretzel</h3>
-          <div class="item-image-box">🥨</div>
+          <div class="item-image-box"><img src="https://i.pinimg.com/736x/d8/f7/05/d8f7057c32d9b05ca6c4e3dccf276d84.jpg" alt="Shield Pretzel"></div>
           <p class="item-description">
             A warm, soft, and lightly salted pretzel, perfect for a defensive snack. Comes with a side of cheesy "Dip of Defense." Grants +10 stamina for savory cravings.
           </p>
